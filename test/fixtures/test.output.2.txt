@@ -1,0 +1,7 @@
+There are 2 <IMG> tags without "alt" attributes.
+There are 11 <A> tags without "rel" attributes.
+This HTML does have <TITLE> tag.
+This HTML does have <META> tag with "name=descriptions".
+This HTML does have <META> tag with "name=keywords".
+There is no <STRONG> tag in this HTML document.
+There is 1 <H1> tag in thie HTML document

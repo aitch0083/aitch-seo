@@ -1,0 +1,36 @@
+{
+  "name": "aitch-seo",
+  "version": "1.0.0",
+  "description": "SEO toolkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test/**/**.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aitch0083/aitch-seo.git"
+  },
+  "keywords": [
+    "SEO"
+  ],
+  "author": "Aitch Chung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aitch0083/aitch-seo/issues"
+  },
+  "homepage": "https://github.com/aitch0083/aitch-seo#readme",
+  "devDependencies": {
+    "bluebird": "^3.5.1",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cheerio": "^1.0.0-rc.2",
+    "chi": "0.0.10",
+    "lodash": "^4.17.10",
+    "log": "^1.4.0",
+    "memory-streams": "^0.1.3",
+    "mocha": "^5.1.1",
+    "request": "^2.85.0",
+    "response": "^0.18.0",
+    "sanitize-html": "^1.18.2"
+  }
+}
