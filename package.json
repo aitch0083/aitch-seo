@@ -1,6 +1,6 @@
 {
   "name": "aitch-seo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SEO toolkit",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "url": "https://github.com/aitch0083/aitch-seo/issues"
   },
   "homepage": "https://github.com/aitch0083/aitch-seo#readme",
-  "devDependencies": {
+  "dependencies": {
     "bluebird": "^3.5.1",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",

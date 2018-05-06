@@ -22,6 +22,13 @@ $i_am_console> npm install --save-dev mocha
 #or you just want to party:
 $i_am_console> npm i -g mocha
 ```
+Goto clone this project from GitHub page:
+
+```
+$i_am_console> git clone git@github.com:aitch0083/aitch-seo.git
+$i_am_console> cd aitch-seo
+$i_am_console> npm install
+```
 
 Then you can run the test:
 
@@ -31,9 +38,16 @@ $i_am_console> npm run test
 
 ##Usage:
 
+Including the `SEO` object:
+
+```
+var SEO = require('aitch-seo');
+```
+
 Fetching by assigning the `URL`:
 
 ```
+var SEO    = require('aitch-seo');
 var url    = 'https://www.lian-car.com/';
 var result = SEO.fetch_url(url);
 
@@ -47,6 +61,7 @@ result.then(function(parsed_rlt){
 Fetching by assigning the file name:
 
 ```
+var SEO       = require('aitch-seo');
 var test_file = '/somewhere_out_there/random_html_document.html';
 var result    = SEO.fetch_from_file(test_file);
 result.then(function(parsed_rlt){
