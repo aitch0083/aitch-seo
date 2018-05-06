@@ -3,9 +3,9 @@
 SEO toolkit
 
 This module supports:
-1. Fetching the HTML document from the lcoation specified by URL or ReadableStream.
+1. Fetching the HTML document from the location specified by URL or `ReadableStream`.
 2. Validating the fetched document with the customised rules.
-3. Exporting the evaluation reuslts with the WritableStream provided.
+3. Exporting the evaluation results with the `WritableStream` provided, e.g., MemoryStream, FileStream, Console etc.
 
 This module use `cheerio` to construct the DOM for you.
 
@@ -14,7 +14,55 @@ This module use `cheerio` to construct the DOM for you.
 npm install --save-dev aitch-seo
 ```
 
-##Test
+##Try it out
+
+```
+const AWithNoRelRule   = require('aitch-seo/rules/AWithNoRelRule');
+const ImgWithNoAltRule = require('aitch-seo/rules/ImgWithNoAltRule');
+const HeadRule         = require('aitch-seo/rules/HeadRule');
+const TooStrongRule    = require('aitch-seo/rules/TooStrongRule');
+const TooManyH1sRule   = require('aitch-seo/rules/TooManyH1sRule');
+const SEO              = require('aitch-seo');
+
+var rules = [
+	ImgWithNoAltRule, //1
+	AWithNoRelRule, //2
+	TooStrongRule,//3
+	TooManyH1sRule, //4
+	HeadRule, //5
+];
+
+var test_writing_file = __dirname + '/output.txt';
+var test_file         = 'https://www.lian-car.com';
+var result            = SEO.fetch_url(test_file);
+
+result.then(function(parsed_rlt){
+	var $ = parsed_rlt.selector;
+
+	var validation_results = SEO.validate(rules, $);
+	var rlt = SEO.push_file(test_writing_file, validation_results);
+
+	if(rlt){
+		console.info('We did it!!');
+	} else {
+		console.error('Oh no!');
+	}
+});
+```
+
+The content of `output.txt`:
+
+```
+There is no <IMG> tag in this HTML document without "alt" attribute.
+There is no <A> tag in this HTML document without "rel" attribute.
+There is no <STRONG> tag in this HTML document.
+There is 1 <H1> tag in thie HTML document
+This HTML does have <TITLE> tag.
+This HTML does have <META> tag with "name=descriptions".
+This HTML does have <META> tag with "name=keywords".
+```
+
+##Test the source
 Make sure you have installed `mocha`:
 
 ```
@@ -34,6 +82,17 @@ Then you can run the test:
 
 ```
 $i_am_console> npm run test
+```
+
+##What you get:
+```
+SEO.fetch_url(url){} //get the HTML document from the location specified by URL
+SEO.fetch_from_file(target){} //get the HTML document from the location specified by "target", the file name string
+SEO.fetch(stream){}  //get the HTML document from the location specified by "target", the ReadableStream object
+SEO.push(stream, results, delimiter){}//output the validation results to the location specified by WritableStream, and join the content with "delimiter" specified
+SEO.push_file(target, results){}//output the validation results to the location specified by "target", the file name string
+SEO.push_console(results, delimiter, stream, iwantconsole){}//you figure it out, it's fun
+SEO.validate(rules, selector, configs){}//validate the HTML content with the rules provided
 ```
 
 ##Usage:
@@ -161,7 +220,7 @@ Since all the rules derive from `rules/Rule`, you can use any rule in the `rules
 'use strict'
 
 const _    = require('lodash');
-const Rule = require('./Rule');
+const Rule = require('aitch-seo/rules/Rule');
 
 const MyOwnRule = _.extend(new Rule(), {
 	name: 'MyOwnRule',
@@ -216,17 +275,17 @@ result.then(function(parsed_rlt){
 You can change the order of the rules by defining your own `rules` array:
 
 ```
-const AWithNoRelRule   = require('./AWithNoRelRule');
-const ImgWithNoAltRule = require('./ImgWithNoAltRule');
-const HeadRule         = require('./HeadRule');
-const TooStrongRule    = require('./TooStrongRule');
-const TooManyH1sRule   = require('./TooManyH1sRule');
+const AWithNoRelRule   = require('aitch-seo/rules/AWithNoRelRule');
+const ImgWithNoAltRule = require('aitch-seo/rules/ImgWithNoAltRule');
+const HeadRule         = require('aitch-seo/rules/HeadRule');
+const TooStrongRule    = require('aitch-seo/rules/TooStrongRule');
+const TooManyH1sRule   = require('aitch-seo/rules/TooManyH1sRule');
 
 var rules = [
 	ImgWithNoAltRule, //1
 	AWithNoRelRule, //2
 	TooStrongRule,//3
-	TooManyH1sRule //4
+	TooManyH1sRule, //4
 	HeadRule, //5
 ];
 ```
