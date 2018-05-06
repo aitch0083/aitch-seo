@@ -5,9 +5,9 @@ SEO toolkit
 This module supports:
 1. Fetching the HTML document from the location specified by URL or `ReadableStream`.
 2. Validating the fetched document with the customised rules.
-3. Exporting the evaluation results with the `WritableStream` provided, e.g., MemoryStream, FileStream, Console etc.
+3. Exporting the evaluation results with the `WritableStream` provided, e.g., MemoryStream, FileStream, and Console etc.
 
-This module use `cheerio` to construct the DOM for you.
+This module uses `cheerio` to construct the DOM for you.
 
 ##Install
 ```
