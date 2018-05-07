@@ -85,14 +85,32 @@ $> npm run test
 ```
 
 ## :clipboard: What you get:
-```
-SEO.fetch_url(url){} //get the HTML document from the location specified by URL
-SEO.fetch_from_file(target){} //get the HTML document from the location specified by "target", the file name string
-SEO.fetch(stream){}  //get the HTML document from the location specified by "target", the ReadableStream object
-SEO.push(stream, results, delimiter){}//output the validation results to the location specified by WritableStream, and join the content with "delimiter" specified
-SEO.push_file(target, results){}//output the validation results to the location specified by "target", the file name string
-SEO.push_console(results, delimiter, stream, iwantconsole){}//you figure it out, it's fun
-SEO.validate(rules, selector, configs){}//validate the HTML content with the rules provided
+
+```js
+//get the HTML document from the location specified by URL
+SEO.fetch_url(url){} 
+
+//get the HTML document from the location 
+//specified by "target", the file name string
+SEO.fetch_from_file(target){} 
+
+//get the HTML document from the location 
+//specified by "target", the ReadableStream object
+SEO.fetch(stream){}
+
+//output the validation results to the location 
+// specified by WritableStream, and join the content with "delimiter" specified
+SEO.push(stream, results, delimiter){}
+
+//output the validation results to the location 
+//specified by "target", the file name string
+SEO.push_file(target, results){}
+
+//you figure it out, it's fun
+SEO.push_console(results, delimiter, stream, iwantconsole){}
+
+//validate the HTML content with the rules provided
+SEO.validate(rules, selector, configs){}
 ```
 
 ## :clipboard: Usage:
