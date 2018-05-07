@@ -176,10 +176,10 @@ result.then(function(parsed_rlt){
 	});
 });
 
-#you will get the following message if succeed:
-#There are 2 <IMG> tags without "alt" attributes.
-#There are 11 <A> tags without "rel" attributes.
-#This HTML does have <TITLE> tag.
+//you will get the following message if succeed:
+//There are 2 <IMG> tags without "alt" attributes.
+//There are 11 <A> tags without "rel" attributes.
+//This HTML does have <TITLE> tag.
 ```
 
 Wrting to a place you like:
