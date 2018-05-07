@@ -9,14 +9,14 @@ This module supports:
 
 This module uses `cheerio` to construct the DOM for you.
 
-##Install
+## :clipboard: Install
 ```
 npm install --save-dev aitch-seo
 ```
 
-##Try it out
+## :clipboard: Try it out
 
-```
+```js
 const AWithNoRelRule   = require('aitch-seo/rules/AWithNoRelRule');
 const ImgWithNoAltRule = require('aitch-seo/rules/ImgWithNoAltRule');
 const HeadRule         = require('aitch-seo/rules/HeadRule');
@@ -62,29 +62,29 @@ This HTML does have <META> tag with "name=descriptions".
 This HTML does have <META> tag with "name=keywords".
 ```
 
-##Test the source
+## :clipboard: Test the source
 Make sure you have installed `mocha`:
 
 ```
-$i_am_console> npm install --save-dev mocha
+$> npm install --save-dev mocha
 #or you just want to party:
-$i_am_console> npm i -g mocha
+$> npm i -g mocha
 ```
 Goto clone this project from GitHub page:
 
 ```
-$i_am_console> git clone git@github.com:aitch0083/aitch-seo.git
-$i_am_console> cd aitch-seo
-$i_am_console> npm install
+$> git clone git@github.com:aitch0083/aitch-seo.git
+$> cd aitch-seo
+$> npm install
 ```
 
 Then you can run the test:
 
 ```
-$i_am_console> npm run test
+$> npm run test
 ```
 
-##What you get:
+## :clipboard: What you get:
 ```
 SEO.fetch_url(url){} //get the HTML document from the location specified by URL
 SEO.fetch_from_file(target){} //get the HTML document from the location specified by "target", the file name string
@@ -95,17 +95,17 @@ SEO.push_console(results, delimiter, stream, iwantconsole){}//you figure it out,
 SEO.validate(rules, selector, configs){}//validate the HTML content with the rules provided
 ```
 
-##Usage:
+## :clipboard: Usage:
 
 Including the `SEO` object:
 
-```
+```js
 var SEO = require('aitch-seo');
 ```
 
 Fetching by assigning the `URL`:
 
-```
+```js
 var SEO    = require('aitch-seo');
 var url    = 'https://www.lian-car.com/';
 var result = SEO.fetch_url(url);
@@ -119,7 +119,7 @@ result.then(function(parsed_rlt){
 
 Fetching by assigning the file name:
 
-```
+```js
 var SEO       = require('aitch-seo');
 var test_file = '/somewhere_out_there/random_html_document.html';
 var result    = SEO.fetch_from_file(test_file);
@@ -132,7 +132,7 @@ result.then(function(parsed_rlt){
 
 Fetching and validating:
  
-```
+```js
 //Import your rules
 const AWithNoRelRule   = require('./AWithNoRelRule');
 const ImgWithNoAltRule = require('./ImgWithNoAltRule');
@@ -166,7 +166,7 @@ result.then(function(parsed_rlt){
 
 Wrting to a place you like:
 
-```
+```js
 var test_writing_file = '/somewhere_awesome/output.txt';
 var test_file         = '/somewhere_out_there/random_html_document.html';
 var result            = SEO.fetch_from_file(test_file);
@@ -187,7 +187,7 @@ result.then(function(parsed_rlt){
 
 Wrting to any WritableStream:
 
-```
+```js
 const ms = require('memory-streams');//fancy~~~
 
 var test_file = '/somewhere_out_there/random_html_document.html';
@@ -211,11 +211,11 @@ result.then(function(parsed_rlt){
 
 More usages, please refer to `test/test.js`.
 
-##Customise your own Rule
+## :clipboard: Customise your own Rule
 
 Since all the rules derive from `rules/Rule`, you can use any rule in the `rules` folder as the template:
 
-```
+```js
 #file name: rules/MyOwnRule.js
 'use strict'
 
@@ -274,7 +274,7 @@ result.then(function(parsed_rlt){
 
 You can change the order of the rules by defining your own `rules` array:
 
-```
+```js
 const AWithNoRelRule   = require('aitch-seo/rules/AWithNoRelRule');
 const ImgWithNoAltRule = require('aitch-seo/rules/ImgWithNoAltRule');
 const HeadRule         = require('aitch-seo/rules/HeadRule');
