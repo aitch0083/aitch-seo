@@ -1,9 +1,10 @@
 # :ocean: aitch-seo
 
 ## :earth_asia: SEO toolkit
-`aitch-seo` helps you with loading the HTML documents and evaluating if the HTML document has follow the rules you specified.
+`aitch-seo` helps you with loading the HTML document and evaluating if the HTML document has followed the rules you specified.
 
 This module supports:
+
 1. Fetching the HTML document from the location specified by URL or `ReadableStream`.
 2. Validating the fetched document with the customised rules.
 3. Exporting the evaluation results with the `WritableStream` provided, e.g., MemoryStream, FileStream, and Console etc.
