@@ -1,6 +1,7 @@
-# aitch-seo
+# :ocean: aitch-seo
 
-SEO toolkit
+## :earth_asia: SEO toolkit
+`aitch-seo` helps you with loading the HTML documents and evaluating if the HTML document has follow the rules you specified.
 
 This module supports:
 1. Fetching the HTML document from the location specified by URL or `ReadableStream`.
@@ -309,3 +310,5 @@ var rules = [
 ```
 
 Have fun~~
+
+![super cute bulldog](https://imgur.com/mb3Dtqj.jpg "peace out~")
