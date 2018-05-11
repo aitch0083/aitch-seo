@@ -1,6 +1,6 @@
 {
   "name": "aitch-seo",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "SEO toolkit",
   "main": "index.js",
   "scripts": {
